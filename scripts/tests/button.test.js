@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 
+
 const buttonClick = require("../button");
 
 //the beforeEach function is a hook that allows you to define a setup or
@@ -19,5 +20,29 @@ describe("DOM tests", () => {
     test("Expects content to change", () => {
         buttonClick();
         expect(document.getElementById("par").innerHTML).toEqual("You Clicked");
+    });
+});
+// the above takes the specified element and places it in the mock dom
+// the below takes the whole index.html file and places it in the mock dom
+
+const buttonClick = require("../button");
+
+beforeAll(() => {
+    let fs = require("fs");
+    let fileContents = fs.readFileSync("index.html", "utf-8");
+    document.open();
+    document.write(fileContents);
+    document.close();
+});
+
+describe("DOM tests", () => {
+    test("Expects content to change", () => {
+        buttonClick();
+        expect(document.getElementById("par")
+            .innerHTML).toEqual("You Clicked");
+    });
+    //It is now easier to run all tests on the page in one code block
+    test("h1 should exist", () => {
+        expect(document.getElementsByTagName("h1").length).toBe(1);
     });
 });
