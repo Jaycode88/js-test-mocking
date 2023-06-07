@@ -1,0 +1,22 @@
+{
+  "name": "js-test-mocking",
+  "version": "1.0.0",
+  "description": "![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaycode88/js-test-mocking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaycode88/js-test-mocking/issues"
+  },
+  "homepage": "https://github.com/Jaycode88/js-test-mocking#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
